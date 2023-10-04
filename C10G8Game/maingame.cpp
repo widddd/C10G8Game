@@ -16,6 +16,16 @@ int existence = 0;//存在感
 
 int renown = 0;//知名度
 bool love = 0;//是否恋爱，0为否，1为是，默认为不是(≧∇≦)ﾉ
+bool debug_mode = 0;//调试模式开关，编译前调节
+//数组定义
+int scores[5] = { goodwill,close,existence,renown, };
+//日期系统定义
+
+
+
+//main为主逻辑函数，其他函数为剧情函数，在主逻辑函数里调用。
+int renown = 0;//知名度
+bool love = 0;//是否恋爱，0为否，1为是，默认为不是(≧∇≦)ﾉ
 bool debug_mode = 0;//调试模式开关
 //数组定义
 int scores[5] = { goodwill,close,existence,renown, };
@@ -30,7 +40,9 @@ int main() {
 	//别问，问就是不配，能把那玩意写进游戏里？hhh
 	int sex = 0;
 
-	debug_start();
+	if (debug_mode == 1) {
+		debug_start();
+	}
 	
 	debug_output1();
 	background1();//背景剧情
@@ -118,6 +130,7 @@ int main() {
 }
 
 void debug_start() {
+	debug_mode = 0;
 	string comm;
 	cout << "此版本为调试版本，若要开始游戏请输入任意字符按回车，开启调试模式请输入cheat。调试模式会自动输出数组数据。" << endl;
 	cout << ">";
