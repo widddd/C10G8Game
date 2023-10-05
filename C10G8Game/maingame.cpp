@@ -3,7 +3,7 @@ using namespace std;
 #include <Windows.h>
 #include <string>
 #include "mainfunc.h"
-
+#pragma comment( linker, "/subsystem:\"windows\" /entry:\"mainCRTStartup\"" ) // 设置入口地址
 
 //函数声明已经移动至mainfunc.h文件中。
 
@@ -20,18 +20,6 @@ bool debug_mode = 0;//调试模式开关，编译前调节
 //数组定义
 int scores[5] = { goodwill,close,existence,renown, };
 //日期系统定义
-
-
-
-//main为主逻辑函数，其他函数为剧情函数，在主逻辑函数里调用。
-int renown = 0;//知名度
-bool love = 0;//是否恋爱，0为否，1为是，默认为不是(≧∇≦)ﾉ
-bool debug_mode = 0;//调试模式开关
-//数组定义
-int scores[5] = { goodwill,close,existence,renown, };
-//日期系统定义
-
-
 
 //main为主逻辑函数，其他函数为剧情函数，在主逻辑函数里调用。
 int main() {
